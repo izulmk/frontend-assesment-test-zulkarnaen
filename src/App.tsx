@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from "react";
+// import "./App.css";
+// import ListPage from "./components/ListPage";
+// import ListPlanets from "./components/ListPlanets";
+
+// function App() {
+//   return (
+//     <div className="App ">
+//       <h1 className="text-3xl font-bold underline">LIST PAGE</h1>
+//       <ListPlanets />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ListPlanets from "./pages/home/ListPlanets";
+import DetailPlanet from "./pages/detailplanet/DetailPlanet";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ListPlanets />} />
+        <Route path="//https://swapi.dev/api/planets/:id" element={<DetailPlanet />} />
+        {/* <Route path="/hotels/:id" element={<Hotel />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
